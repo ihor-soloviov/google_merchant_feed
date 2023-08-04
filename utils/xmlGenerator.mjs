@@ -44,7 +44,7 @@ export const generateXml = (data) => {
   const fileName = moment().format("DDMMYYYY-HHmmss_SSS");
 
   writeFile(
-    `/Users/6man/projects/1.WORKSET/google_merchant_feed/uploads/${fileName}.xml`,
+    `/home/polarbear/apps/google_merchant_feed/uploads/${fileName}.xml`,
     xml,
     (error) => {
       if (error) {
