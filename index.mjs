@@ -5,7 +5,7 @@ import { scheduleJob } from "node-schedule";
 import { DailyLoader } from "./utils/dailyLoader.mjs";
 
 const app = express.default();
-const port = 3000;
+const port = 8088;
 
 
 
