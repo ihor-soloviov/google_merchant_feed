@@ -22,6 +22,7 @@ export const getNewestXMLFile = async (req, res) => {
     const filePath = path.join(uploadsDir, newestFile);
 
     res.set("Content-Type", "text/xml");
+    res.set("Content-Disposition", `attachment; filename="${newestFile}"`);
     res.sendFile(filePath);
   } catch (err) {
     console.error("Error reading directory:", err);

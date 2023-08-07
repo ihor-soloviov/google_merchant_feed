@@ -12,7 +12,7 @@ const port = 8088;
 app.use(cors());
 app.get('/feed', getNewestXMLFile);
 
-scheduleJob('* * * * *', DailyLoader);
+scheduleJob('55 15 * * *', DailyLoader);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -45,12 +45,16 @@ export const generateXml = (data) => {
 
   writeFile(
     `/home/polarbear/apps/google_merchant_feed/uploads/${fileName}.xml`,
+    // `/Users/6man/projects/1.WORKSET/google_merchant_feed/uploads/${fileName}.xml`,
+
     xml,
     (error) => {
       if (error) {
         console.error("Some troubles with saving file", error);
       }
-      console.log("file was succesfully saved");
+      else {
+        console.log("file was succesfully saved");
+      }
     }
   );
 };
