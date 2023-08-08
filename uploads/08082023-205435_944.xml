@@ -32,16 +32,6 @@
       <g:brand>Burn</g:brand>
     </item>
     <item>
-      <g:id>575</g:id>
-      <g:title>Coca - Cola Zero Coffee 0,25 л</g:title>
-      <g:description>Coca - Cola Zero Coffee 0,25 л</g:description>
-      <g:link>https://polarpelmeni.com.ua/product/575</g:link>
-      <g:image_link>https://pelmeni-proxy.work-set.eu/upload/pos_cdb_280243/menu/product_1686661869_575_original.jpeg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>35.00 UAH</g:price>
-      <g:brand>Polar Pelmeni</g:brand>
-    </item>
-    <item>
       <g:id>463</g:id>
       <g:title>Coca-Cola 0,33 л</g:title>
       <g:description>Coca-Cola 0,33 л</g:description>
@@ -59,6 +49,16 @@
       <g:image_link>https://pelmeni-proxy.work-set.eu/upload/pos_cdb_280243/menu/product_1686661902_464_original.jpeg</g:image_link>
       <g:availability>in_stock</g:availability>
       <g:price>30.00 UAH</g:price>
+      <g:brand>Coca-Cola</g:brand>
+    </item>
+    <item>
+      <g:id>575</g:id>
+      <g:title>Coca-Cola Zero Coffee 0,25 л</g:title>
+      <g:description>Coca-Cola Zero Coffee 0,25 л</g:description>
+      <g:link>https://polarpelmeni.com.ua/product/575</g:link>
+      <g:image_link>https://pelmeni-proxy.work-set.eu/upload/pos_cdb_280243/menu/product_1686661869_575_original.jpeg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>35.00 UAH</g:price>
       <g:brand>Coca-Cola</g:brand>
     </item>
     <item>
@@ -123,7 +123,7 @@
     </item>
     <item>
       <g:id>452</g:id>
-      <g:title>Polar-Шеф </g:title>
+      <g:title>Polar- Шеф </g:title>
       <g:description>Круассан, огірок, салямі, сир, салат, яйце варене</g:description>
       <g:link>https://polarpelmeni.com.ua/product/452</g:link>
       <g:image_link>https://pelmeni-proxy.work-set.eu/upload/pos_cdb_280243/menu/product_1686342283_452_original.jpeg</g:image_link>
