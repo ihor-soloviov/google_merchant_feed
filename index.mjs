@@ -7,10 +7,16 @@ import { DailyLoader } from "./utils/dailyLoader.mjs";
 const app = express.default();
 const port = 8088;
 
+const clientSecret = 'e87cc234e3ec594cacfebb0aacf138fe';
 
 
 app.use(cors());
+app.use(express.json());
 app.get('/feed', getNewestXMLFile);
+app.post('/hook', (req, res) => {
+console.log(req.body);
+res.sendStatus(200);
+});
 
 scheduleJob('55 15 * * *', DailyLoader);
 
