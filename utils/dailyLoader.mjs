@@ -3,11 +3,11 @@ import { generateXml } from "./xmlGenerator.mjs";
 
 const excludedKeywords = ["АКЦІЯ", "Допинг", "модифік"];
 
-const shouldIncludeProduct = (productName, price) => {
+const shouldIncludeProduct = (productName, categoryName, price) => {
   return (
     !excludedKeywords.some((keyword) => productName.includes(keyword)) &&
     !isNaN(price) &&
-    price !== 0
+    price !== 0 && categoryName.includes('onlineOrder')
   );
 };
 
@@ -55,9 +55,10 @@ export const DailyLoader = async () => {
 
     response.data.response.forEach((el) => {
       const productName = el.product_name;
+      const categoryName = el.category_name;
       const elPrice = parseInt(el.spots[0].price.slice(0, -2));
 
-      if (shouldIncludeProduct(productName, elPrice)) {
+      if (shouldIncludeProduct(productName,categoryName, elPrice)) {
         data.channel.push({
           "g:id": el.product_id,
           "g:title": productName,
