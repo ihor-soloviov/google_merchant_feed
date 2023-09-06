@@ -7,8 +7,24 @@ const shouldIncludeProduct = (productName, categoryName, price) => {
   return (
     !excludedKeywords.some((keyword) => productName.includes(keyword)) &&
     !isNaN(price) &&
-    price !== 0 && categoryName.includes('onlineOrder')
+    price !== 0 &&
+    categoryName.includes("onlineOrder")
   );
+};
+
+const ingredientsSlicer = (categoryName, el) => {
+  const awailableCategories = [
+    "onlineOrder: Кава",
+    "onlineOrder: Холодні напої",
+    "onlineOrder: Гарячі напої",
+    "onlineOrder: Десерти",
+    "onlineOrder: Додатково",
+    "onlineOrder: Алкоголь",
+  ];
+  const desc = el.product_production_description;
+  const slicedDesc = el.product_production_description.split('.').slice(1).join('.')
+
+  return awailableCategories.includes(categoryName) ? desc : slicedDesc
 };
 
 const branding = (productName) => {
@@ -58,14 +74,11 @@ export const DailyLoader = async () => {
       const categoryName = el.category_name;
       const elPrice = parseInt(el.spots[0].price.slice(0, -2));
 
-      if (shouldIncludeProduct(productName,categoryName, elPrice)) {
+      if (shouldIncludeProduct(productName, categoryName, elPrice)) {
         data.channel.push({
           "g:id": el.product_id,
           "g:title": productName,
-          "g:description":
-            el.product_production_description.length > 0
-              ? el.product_production_description
-              : productName,
+          "g:description": ingredientsSlicer(categoryName, el),
           "g:link": `https://polarpelmeni.com.ua/product/${el.product_id}`,
           "g:image_link": `https://pelmeni-proxy.work-set.eu${el.photo_origin}`,
           "g:availability": "in_stock",
